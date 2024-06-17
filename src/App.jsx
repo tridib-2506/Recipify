@@ -15,7 +15,7 @@ function App() {
       console.log('loading..')
       // const response = await axios.get(`YOUR_API_ENDPOINT?ingredient=${input}`);
       const response = await axios({
-        url: "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyBZ94tqY-P3Z7l5py_Bb9__KCz4ADwcA7I",
+        url: "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=",
         method: "post",
         data: {"contents":[
           {"parts":[
