@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .background-text {
+    font-family: 'Pacifico', cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20vw;
+    background: linear-gradient(to bottom, #ffffff 0%, #ff6432 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.25;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+.App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #ff6432;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    z-index: 1;
+  }
+  
+  .App h1 {
+    font-size: 3em;
+    font-family: 'Pacifico', cursive;
+}
+
+.App h2 {
+    font-size: 1.5em;
+    z-index: 1;
+    /* font-family: 'Pacifico', cursive; */
+}
+
+  input {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    z-index: 1;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .dishes {
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+  }
+  
+  .dish-button {
+    background: none;
+    border: none;
+    color: #61dafb;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 5px;
+  }
+  
+  .dish-button:hover {
+    color: #ffffff;
+    background-color: #61dafb;
+  }
+
+  .App-footer {
+    background-color: #ff6432;
+    color: white;
+    padding: 20px 0;
+    /* position: fixed; */
+    width: 100%;
+    bottom: 0;
+    font-size: 1em;
+}

@@ -1,73 +1,67 @@
-import { useState } from 'react'
-import axios from "axios";
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+import { getDishSuggestions } from './geminiService';
 
 function App() {
-  const [input, setInput] = useState('');
-  const [recipes, setRecipes] = useState([]);
+  const [ingredients, setIngredients] = useState('');
+  const [dishes, setDishes] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (event) => {
-    setInput(event.target.value);
+  const handleInputChange = (event) => {
+    setIngredients(event.target.value);
   };
 
-  const fetchDishes = async () => {
+  const handleCook = async () => {
+    setLoading(true);
     try {
-      console.log('loading..')
-      // const response = await axios.get(`YOUR_API_ENDPOINT?ingredient=${input}`);
-      const response = await axios({
-        url: "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=",
-        method: "post",
-        data: {"contents":[
-          {"parts":[
-            {"text": `Give me five famous indian dishes which can me made using ${input}?`}
-          ]}
-          ]
-        },
-      })
-      // console.log(response)
-      console.log(response['data']['candidates'][0]['content']["parts"][0]["text"])
-      setRecipes(response['data']['candidates'][0]['content']["parts"][0]["text"]); // Adjust based on the API response structure
+      const suggestedDishes = await getDishSuggestions(ingredients);
+      setDishes(suggestedDishes);
     } catch (error) {
-      console.error('Error fetching dishes:', error);
+      console.error('Error getting dish suggestions:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetchDishes();
+  const handleDishClick = (dish) => {
+    alert(`You clicked on ${dish}. Here you could show more details about the dish or link to a recipe.`);
   };
 
   return (
-    <>
-      <header>
-        <h1>Recipify</h1>
+    <div className="App">
+      <div className="background-text">yum!</div>
+      <h1>Recipify</h1>
+      <header className="App-header">
+        <h2 style={{ marginBottom: '10px' }}>Enter the raw material that you have</h2>
+        <input
+          type="text"
+          value={ingredients}
+          onChange={handleInputChange}
+          placeholder="Enter ingredients"
+        />
+        <button onClick={handleCook} disabled={loading}>
+          {loading ? 'Cooking...' : 'Cook'}
+        </button>
+        {dishes.length > 0 && (
+          <div className="dishes">
+            <h2 style={{ zIndex: '1' }}>Suggested Dishes:</h2>
+            <ul>
+              {dishes.map((dish, index) => (
+                <li key={index}>
+                  <button className="dish-button" onClick={() => handleDishClick(dish)}>
+                    {dish}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </header>
-      <main>
-        <h2>Enter raw material that you have:</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={input}
-            onChange={handleChange}
-            placeholder="e.g., tomatoes, chicken"
-          />
-          <button type="submit">Get Dishes</button>
-        </form>
-        <div className="recipes">
-          {recipes.length > 0 ? (
-            <p>{recipes}</p>
-            // <ul>
-            //   {recipes.map((recipe, index) => (
-            //     <li key={index}>{recipe.name}</li> // Adjust based on API response structure
-            //   ))}
-            // </ul>
-          ) : (
-            <p>No recipes found. Please try different ingredients.</p>
-          )}
-        </div>
-      </main>
-    </>
-  )
+      <footer className="App-footer">
+        Built with love ❤️ by Tridib and Shruti!
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
