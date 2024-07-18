@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 import { getDishSuggestions } from './geminiService';
+import { fetchRecipe } from './apiService';
 
 function App() {
   const [ingredients, setIngredients] = useState('');
   const [dishes, setDishes] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   const handleInputChange = (event) => {
     setIngredients(event.target.value);
@@ -23,8 +25,17 @@ function App() {
     }
   };
 
-  const handleDishClick = (dish) => {
-    alert(`You clicked on ${dish}. Here you could show more details about the dish or link to a recipe.`);
+  const handleDishClick = async (dish) => {
+    setLoading(true);
+    try {
+      const recipeData = await fetchRecipe(dish);
+      setSelectedRecipe(recipeData);
+    } catch (error) {
+      console.error('Error fetching recipe:', error);
+      alert('Failed to fetch the recipe. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -54,6 +65,15 @@ function App() {
                 </li>
               ))}
             </ul>
+          </div>
+        )}
+        {selectedRecipe && (
+          <div className="recipe">
+            <h2>Recipe for {selectedRecipe.dish}</h2>
+            <p>Ingredients:</p>
+            <pre>{selectedRecipe.ingredients}</pre>
+            <p>Instructions:</p>
+            <pre>{selectedRecipe.instructions}</pre>
           </div>
         )}
       </header>
