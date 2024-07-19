@@ -9,7 +9,10 @@ The app leverages advanced AI technologies, including the Google Gemini API, to 
 
 1. Install Required Packages
    * Open your terminal and navigate to the project directory.
-   * Install all the required Python packages by running : **pip install -r requirements.txt**
+   * Install all the required Python packages by running :
+     ```bash
+     pip install -r requirements.txt
+     ```
     
 2. Set Up Gemini API Key
    * Obtain your Gemini API Key from the Google Gemini API official website.
@@ -17,15 +20,27 @@ The app leverages advanced AI technologies, including the Google Gemini API, to 
 
 3. Install Node.js Packages
    * In the terminal, ensure you are in the project directory.
-   * Install the required Node.js packages by running : **npm install**
+   * Install the required Node.js packages by running :
+     ```bash
+     npm install
+     ```
   
 4. Run the Backend Server
-   * Start the backend server by running : **python scraper.py**
-   * If you are using a Mac, you may need to use : **python3 scraper.py**
+   * Start the backend server by running :
+     ```bash
+     python scraper.py
+     ```
+   * If you are using a Mac, you may need to use :
+     ```bash
+     python3 scraper.py
+     ```
 
 5. Start the Frontend Server
    * Open a new terminal in the project directory.
-   * Run the following command to start the frontend server : **npm run dev**
+   * Run the following command to start the frontend server :
+     ```bash
+     npm run dev
+     ```
   
 6. Access the Application
    * In the terminal, you will see a link provided by the development server.
