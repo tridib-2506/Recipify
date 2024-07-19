@@ -29,7 +29,10 @@ function App() {
     setLoading(true);
     try {
       const recipeData = await fetchRecipe(dish);
-      setSelectedRecipe(recipeData);
+      setSelectedRecipe({
+        ...recipeData,
+        dishName: dish  // Store the selected dish name
+      });
     } catch (error) {
       console.error('Error fetching recipe:', error);
       alert('Failed to fetch the recipe. Please try again.');
@@ -69,11 +72,8 @@ function App() {
         )}
         {selectedRecipe && (
           <div className="recipe">
-            <h2>Recipe for {selectedRecipe.dish}</h2>
-            <p>Ingredients:</p>
+            <h2>Recipe for {selectedRecipe.dishName}</h2>
             <pre>{selectedRecipe.ingredients}</pre>
-            <p>Instructions:</p>
-            <pre>{selectedRecipe.instructions}</pre>
           </div>
         )}
       </header>
