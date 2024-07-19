@@ -59,8 +59,9 @@ def scrape_recipe(dish):
                     end_index = visible_text.find("NUTRITION INFO")
                 
                 if start_index != -1 and end_index != -1:
-                    ingredients_text = visible_text[start_index + 11:end_index].strip()
+                    ingredients_text = visible_text[start_index:end_index].strip()
                     ingredients_text = re.sub(r'▢\s*\n*', '• ', ingredients_text)
+                    ingredients_text = ingredients_text.replace("INGREDIENTS (US CUP = 240ML )", "INGREDIENTS\n(US CUP = 240ML)\n", 1)
                     ingredients_text = re.sub(r'(INSTRUCTIONS)', r'\1\n', ingredients_text)
                     return {
                         "recipe_link": recipe_link,
