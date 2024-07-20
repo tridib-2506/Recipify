@@ -10,8 +10,8 @@ export async function getDishSuggestions(ingredients) {
   const prompt = `Suggest 5 Indian dishes that can be made using some or all of these ingredients: ${ingredients}. Only provide the names of the dishes, separated by commas.`;
 
   const result = await model.generateContent(prompt);
-  const response = await result.response;
+  const response = result.response;
   const text = response.text();
-  
+  console.log(text);
   return text.split(',').map(dish => dish.trim());
 }

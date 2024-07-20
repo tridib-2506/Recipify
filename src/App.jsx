@@ -78,7 +78,7 @@ function App() {
         )}
       </header>
       <footer className="App-footer">
-        Built with love ❤️ by Tridib and Shruti!
+        Built with ❤️ by Tridib and Shruti!
       </footer>
     </div>
   );
