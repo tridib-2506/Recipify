@@ -1,0 +1,75 @@
+.first {
+    
+    background-image: url('../../assets/lines.png'); /* Path to your background image */
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    z-index: 0;
+}
+
+.header {
+    margin: 86px 0 0 140px; /* Margin from top and left */
+    display: flex;
+    flex-direction: column; /* Stack the divs vertically */
+    align-items: flex-start; /* Align the divs to the left */
+    z-index: 1;
+}
+.heading {
+    font-size: 64px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #361F1F;
+}
+.tagline {
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    color: #543030;
+}
+.holda{
+    margin-top: 72px;
+    margin-bottom: 72px;
+    display: flex;
+    flex-direction: row;;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+
+
+.card{
+    background-color: #fff;
+    height: 380px;
+    width: 360px;
+    padding: 42px 36px;
+    display: flex;
+    flex-direction: column ;
+    align-items: flex-start;
+    border: 1px solid #D9CABC;
+    border-radius: 3px;
+    gap: 24px;
+}
+.profilepic{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    /* border: 1px solid #361F1F; */
+}
+.name{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #361F1F;
+}
+.review{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #543030;
+    text-align: left;
+}

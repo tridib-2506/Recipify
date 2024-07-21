@@ -36,7 +36,9 @@
   
   .App h1 {
     font-size: 3em;
-    font-family: 'Pacifico', cursive;
+    /* font-family: 'Pacifico', cursive; */
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 .App h2 {

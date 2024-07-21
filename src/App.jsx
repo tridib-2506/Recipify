@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { getDishSuggestions } from './geminiService';
 import { fetchRecipe } from './apiService';
+import Testimonials from './components/Testimonials/Testimonials';
 
 function App() {
   const [ingredients, setIngredients] = useState('');
@@ -80,6 +81,7 @@ function App() {
       <footer className="App-footer">
         Built with ❤️ by Tridib and Shruti!
       </footer>
+      {/* <Testimonials/> */}
     </div>
   );
 }
