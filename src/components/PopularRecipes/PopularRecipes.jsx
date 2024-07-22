@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './popRec.css';
 import RepCard from './RepCard'
 import image1 from '../../assets/pavv.png'
@@ -32,9 +32,10 @@ const popp = [
   },
 ]
 
-const PopularRecipes = () => {
+const PopularRecipes = forwardRef((props, ref) => {
   return (
     <>
+    <section ref={ref} id="popular-recipes">
     <div className='outer'>
       <div className='head1'>
         <div className='heading'>
@@ -59,10 +60,11 @@ const PopularRecipes = () => {
 
       </div>
     </div>
+    </section>
     
 
     </>
   )
-}
+});
 
 export default PopularRecipes

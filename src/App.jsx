@@ -1,15 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
 import { getDishSuggestions } from './geminiService';
 import { fetchRecipe } from './apiService';
 import Testimonials from './components/Testimonials/Testimonials';
 import PopularRecipes from './components/PopularRecipes/PopularRecipes';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [ingredients, setIngredients] = useState('');
   const [dishes, setDishes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+
+  const sectionRefs = {
+    popularRecipes: useRef(null),
+    testimonials: useRef(null),
+    // Add more refs as needed
+  };
+
+  const scrollToSection = (sectionKey) => {
+    if (sectionRefs[sectionKey] && sectionRefs[sectionKey].current) {
+      sectionRefs[sectionKey].current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const handleInputChange = (event) => {
     setIngredients(event.target.value);
@@ -82,8 +95,9 @@ function App() {
       <footer className="App-footer">
         Built with ❤️ by Tridib and Shruti!
       </footer>
-      <Testimonials/>
-      <PopularRecipes/>
+      <PopularRecipes ref={sectionRefs.popularRecipes} />
+      <Testimonials ref={sectionRefs.testimonials} />
+      <Footer scrollToSection={scrollToSection} />
     </div>
   );
 }

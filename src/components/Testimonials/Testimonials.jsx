@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './testimonials.css';
 import TestCard from './TestCard';
 import image1 from '../../assets/shrutii.jpg'
@@ -25,9 +25,10 @@ const carrd = [
   },
 ]
 
-const Testimonials = () => {
+const Testimonials = forwardRef((props, ref) => {
   return (
     <>
+    <section ref={ref} id="testimonials">
     <div className='first'>
       <div className='header'>
         <div className='heading'>
@@ -49,10 +50,10 @@ const Testimonials = () => {
 
       </div>
     </div>
-    
+    </section>
 
     </>
   )
-}
+});
 
 export default Testimonials
