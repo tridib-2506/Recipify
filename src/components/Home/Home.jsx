@@ -19,7 +19,7 @@ const Home = () => {
               Recipify
             </div>
             <div className="caption">
-              Stuck in a cooking rut? Enter your ingredients on Recipify and <br />get delicious dish ideas instantly. Click for step-by-step recipes. <br />Cook confidently and enjoy every meal with <br></br>Recipify—your fun kitchen buddy!
+              Stuck in a cooking rut? Enter your ingredients on Recipify and get delicious dish ideas instantly. Click for step-by-step recipes. Cook confidently and enjoy every meal with Recipify—your fun kitchen buddy!
             </div>
           </div>
         </div>

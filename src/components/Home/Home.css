@@ -2,13 +2,14 @@
     margin: 0 auto;
     position: relative;
     height: 100vh;
+    overflow: hidden;
 }
 
 .upper {
     
     background: linear-gradient(89.07deg, #EAEFF3 2.15%, #FFE9D6 97.8%);
     width: 100vw;
-    height: 63.5vh;
+    height: 68vh;
 }
   
 .navbar {
@@ -56,7 +57,7 @@
 .appName {
     font: 'Playfair Display';
     font-size: 75px;
-    font-weight: semi-fold;
+    font-weight: 700;
     color: #361F1F;
     margin-bottom: 20px;
     text-align: left;
@@ -65,21 +66,21 @@
 .caption {
     text-align: left;
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    color: #543030;
     line-height: 1.5;
     margin-bottom: 30px;
-    font-weight: 290;
+
+    font-size: 18px;
+    font-weight: 300;
+    color: #543030;
 }
   
 .pizza {
    
     position: absolute;
-    top: 85px;
+    top: 10%;
     right: 90px;
-    width: 45%;
+    width: 43%;
     height: auto;
-    background-image: url('path-to-your-pizza-image.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -96,16 +97,16 @@ img {
 .searchArea {
     
     position: absolute;
-    top: 51.5%;
-    left: 9%;
+    top: 55%;
+    left: 10%;
     background-color: #ffffff;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 2;
     height: 180px;
     width: 53%;
+    box-shadow: -4px 4px 60px 18px rgba(0, 0, 0, 0.12);
 }
-  
 .searchHeading {
 
     position: relative;
@@ -171,7 +172,7 @@ img {
     border: 0.9px solid #FC7600;
     padding: 5px 10px;
     border-radius: 4px;
-    font-weight: 290;
+    font-weight: 400;
     font-size: 14px;
     color: #361F1F;
 }

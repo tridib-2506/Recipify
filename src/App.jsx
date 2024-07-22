@@ -5,6 +5,7 @@ import { fetchRecipe } from './apiService';
 import Testimonials from './components/Testimonials/Testimonials';
 import PopularRecipes from './components/PopularRecipes/PopularRecipes';
 import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
 
 function App() {
   const [ingredients, setIngredients] = useState('');
@@ -95,6 +96,7 @@ function App() {
       <footer className="App-footer">
         Built with ❤️ by Tridib and Shruti!
       </footer>
+      <Home/>
       <PopularRecipes ref={sectionRefs.popularRecipes} />
       <Testimonials ref={sectionRefs.testimonials} />
       <Footer scrollToSection={scrollToSection} />
