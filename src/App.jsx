@@ -3,6 +3,7 @@ import './App.css';
 import { getDishSuggestions } from './geminiService';
 import { fetchRecipe } from './apiService';
 import Testimonials from './components/Testimonials/Testimonials';
+import PopularRecipes from './components/PopularRecipes/PopularRecipes';
 
 function App() {
   const [ingredients, setIngredients] = useState('');
@@ -81,7 +82,8 @@ function App() {
       <footer className="App-footer">
         Built with ❤️ by Tridib and Shruti!
       </footer>
-      {/* <Testimonials/> */}
+      <Testimonials/>
+      <PopularRecipes/>
     </div>
   );
 }

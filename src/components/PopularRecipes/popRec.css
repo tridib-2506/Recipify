@@ -1,0 +1,74 @@
+.outer {
+    background-color: #FFFBF7;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 22px;
+}
+
+.head1 {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 18px;
+}
+
+
+.popu{
+    padding-bottom: 100px;
+    margin-bottom: 72px;
+    display: flex;
+    flex-direction: row;;
+    gap: 120px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+
+
+.conCard{
+    width: 318px;
+    height: 142px;
+    background-color: #fff;
+    margin-top: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #D9CABC;
+}
+
+.recard{
+    width: 340px;
+    height: 434px;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    border: 1px solid #D9CABC;
+    border-radius: 3px;
+}
+
+.dishname{
+    padding-top: 10px;
+    padding-left: 22px;
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #361F1F;
+}
+.time{
+    padding-left: 22px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    color: #543030;
+    text-align: left;
+}
+.stars{
+    padding-left: 22px;
+    padding-top: 6px;
+}
