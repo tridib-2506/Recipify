@@ -1,0 +1,177 @@
+.home {
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+}
+
+.upper {
+    
+    background: linear-gradient(89.07deg, #EAEFF3 2.15%, #FFE9D6 97.8%);
+    width: 100vw;
+    height: 63.5vh;
+}
+  
+.navbar {
+    position: absolute;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 15px;
+    left: 5vw;
+    right: 5vw;
+}
+  
+.navName {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #361F1F;
+    left: 80px;
+}
+  
+.navButtons button {
+    font-family: 'Poppins', sans-serif;
+    background: none;
+    border: none;
+    margin-left: 30px;
+    cursor: pointer;
+    font-size: 20;
+    color: #361F1F;
+}
+  
+.navButtons button:last-child {
+    color: #FC7600;
+    border: 1px solid #FC7600;
+    padding: 5px 15px;
+}
+  
+.content {
+    position: absolute;
+    top: 20%;
+    max-width: 40%;
+    left: 7vw;
+}
+  
+.appName {
+    font: 'Playfair Display';
+    font-size: 75px;
+    font-weight: semi-fold;
+    color: #361F1F;
+    margin-bottom: 20px;
+    text-align: left;
+}
+  
+.caption {
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #543030;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-weight: 290;
+}
+  
+.pizza {
+   
+    position: absolute;
+    top: 85px;
+    right: 90px;
+    width: 45%;
+    height: auto;
+    background-image: url('path-to-your-pizza-image.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    z-index: 1;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+  
+.searchArea {
+    
+    position: absolute;
+    top: 51.5%;
+    left: 9%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 2;
+    height: 180px;
+    width: 53%;
+}
+  
+.searchHeading {
+
+    position: relative;
+    top: 9%;
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    font-size: 24;
+    color: #361F1F;
+}
+  
+.searchField {
+
+    position: relative;
+    top: 16%;
+    display: flex;
+    padding-left: 20px;
+}
+
+.searchField i {
+
+    position: absolute;
+    z-index: 2;
+    padding-left: 13px;
+    padding-top: 14px;
+    color: #1A1A1A;
+}
+
+.searchField input {
+
+    flex-grow: 1;
+    padding: 12px;
+    background-color: #FFF7F7;
+    border: none;
+    height: 44px;
+    padding-left: 40px;
+}
+  
+.searchField button {
+    height: 45px;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    font-size: 24;
+    background-color: #FC7600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+  
+.tags {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 20px;
+    padding-top: 26px;
+}
+  
+.tags span {
+    background: transparent;
+    border: 0.9px solid #FC7600;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 290;
+    font-size: 14px;
+    color: #361F1F;
+}
