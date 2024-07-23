@@ -1,8 +1,10 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer = ({ scrollToSection }) => {
+const Footer = React.forwardRef(({ scrollToSection }, ref) => {
   return (
+    <>
+    <section ref={ref} id="footer">
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-column">
@@ -40,7 +42,9 @@ const Footer = ({ scrollToSection }) => {
         <p>&copy; Built with ❤️ by Tridib and Shruti in India!</p>
       </div>
     </footer>
+    </section>
+    </>
   );
-};
+});
 
 export default Footer;

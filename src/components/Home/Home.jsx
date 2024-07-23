@@ -1,17 +1,19 @@
 import React from 'react'
 import './Home.css'
+import { Outlet, Link } from "react-router-dom";
 
-const Home = () => {
+const Home = React.forwardRef(({ scrollToSection }, ref) => {
   return (
     <>
+    <section ref={ref} id="home">
       <div className='home'>
         <div className="upper">
           <div className="navbar">
-            <div className="navName">Recipify</div>
+            <div className="navName" onClick={() => scrollToSection('home')}>Recipify</div>
             <div className="navButtons">
-              <button>Popular Recipes</button>
-              <button>What They Say</button>
-              <button>Contact Us</button>
+              <button onClick={() => scrollToSection('popularRecipes')}>Popular Recipes</button>
+              <button onClick={() => scrollToSection('testimonials')}>What They Say</button>
+              <button onClick={() => scrollToSection('footer')}>Contact Us</button>
             </div>
           </div>
           <div className="content">
@@ -37,7 +39,7 @@ const Home = () => {
           <div className="searchField">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" />
-            <button>COOK</button>
+            <Link to="/search" className="cook">COOK</Link>
           </div>
           <div className="tags">
             <span>Tomato</span>
@@ -48,8 +50,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+    </section>
     </>
   )
-}
+});
 
 export default Home

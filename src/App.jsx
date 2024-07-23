@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import { getDishSuggestions } from './geminiService';
 import { fetchRecipe } from './apiService';
@@ -6,6 +7,8 @@ import Testimonials from './components/Testimonials/Testimonials';
 import PopularRecipes from './components/PopularRecipes/PopularRecipes';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
+import SearchScreen from './components/SearchScreen/SearchScreen';
+import { Layout } from './components/Layout/Layout';
 
 function App() {
   const [ingredients, setIngredients] = useState('');
@@ -16,6 +19,8 @@ function App() {
   const sectionRefs = {
     popularRecipes: useRef(null),
     testimonials: useRef(null),
+    footer: useRef(null),
+    home: useRef(null),
     // Add more refs as needed
   };
 
@@ -59,47 +64,16 @@ function App() {
 
   return (
     <div className="App">
-      <div className="background-text">yum!</div>
-      <h1>Recipify</h1>
-      <header className="App-header">
-        <h2 style={{ marginBottom: '10px' }}>Enter the raw material that you have</h2>
-        <input
-          type="text"
-          value={ingredients}
-          onChange={handleInputChange}
-          placeholder="Enter ingredients"
-        />
-        <button onClick={handleCook} disabled={loading}>
-          {loading ? 'Cooking...' : 'Cook'}
-        </button>
-        {dishes.length > 0 && (
-          <div className="dishes">
-            <h2 style={{ zIndex: '1' }}>Suggested Dishes:</h2>
-            <ul>
-              {dishes.map((dish, index) => (
-                <li key={index}>
-                  <button className="dish-button" onClick={() => handleDishClick(dish)}>
-                    {dish}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {selectedRecipe && (
-          <div className="recipe">
-            <h2>Recipe for {selectedRecipe.dishName}</h2>
-            <pre>{selectedRecipe.ingredients}</pre>
-          </div>
-        )}
-      </header>
-      <footer className="App-footer">
-        Built with ❤️ by Tridib and Shruti!
-      </footer>
-      <Home/>
-      <PopularRecipes ref={sectionRefs.popularRecipes} />
-      <Testimonials ref={sectionRefs.testimonials} />
-      <Footer scrollToSection={scrollToSection} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}/>
+          <Route 
+          index element={[<Home ref={sectionRefs.home} scrollToSection={scrollToSection}/>,<PopularRecipes ref={sectionRefs.popularRecipes} />,
+          <Testimonials ref={sectionRefs.testimonials} />,
+          <Footer ref={sectionRefs.footer} scrollToSection={scrollToSection} />]} />
+          <Route path="/search" element={<SearchScreen />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

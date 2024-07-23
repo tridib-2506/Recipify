@@ -137,6 +137,7 @@ img {
 
 .searchField input {
 
+    outline: none;
     flex-grow: 1;
     padding: 12px;
     background-color: #FFF7F7;
@@ -144,8 +145,9 @@ img {
     height: 44px;
     padding-left: 40px;
 }
-  
-.searchField button {
+
+.cook {
+    text-decoration: none;
     height: 45px;
     font-family: 'Poppins', sans-serif;
     height: 100%;

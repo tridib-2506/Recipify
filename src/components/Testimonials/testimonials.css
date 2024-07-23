@@ -1,14 +1,14 @@
 .first {
     
     background-image: url('../../assets/lines.png'); /* Path to your background image */
-    background-size: cover; /* Ensure the background image covers the entire container */
+    background-size: contain; /* Ensure the background image covers the entire container */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
     z-index: 0;
 }
 
 .header {
-    margin: 86px 0 0 140px; /* Margin from top and left */
+    padding: 86px 0 0 140px; /* Margin from top and left */
     display: flex;
     flex-direction: column; /* Stack the divs vertically */
     align-items: flex-start; /* Align the divs to the left */
