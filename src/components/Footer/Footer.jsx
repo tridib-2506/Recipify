@@ -31,7 +31,7 @@ const Footer = React.forwardRef(({ scrollToSection }, ref) => {
         <div className="footer-column">
           <h3 className="footer-heading">Discover</h3>
           <ul className="footer-list">
-            <li><a href="#">Get Dishes Suggestions</a></li>
+            <li><a onClick={() => scrollToSection('home')}>Get Dishes Suggestions</a></li>
             <li><a onClick={() => scrollToSection('popularRecipes')}>Popular Recipes</a></li>
             <li><a onClick={() => scrollToSection('testimonials')}>What They Say</a></li>
           </ul>
