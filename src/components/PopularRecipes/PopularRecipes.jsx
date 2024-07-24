@@ -11,7 +11,7 @@ const popp = [
     recImage: image1,
     dishName: 'Pav Bhaji',
     prepTime: '🕜 15 min Prep time',
-    cookTime: '🕜 65 min Prep time',
+    cookTime: '🕜 65 min Cook time',
     stars: '⭐'.repeat(5),
   },
   {
@@ -19,7 +19,7 @@ const popp = [
     recImage: image2,
     dishName: 'Dumplings',
     prepTime: '🕜 10 min Prep time',
-    cookTime: '🕜 45 min Prep time',
+    cookTime: '🕜 45 min Cook time',
     stars: '⭐'.repeat(4),
   },
   {
@@ -27,7 +27,7 @@ const popp = [
     recImage: image3,
     dishName: 'Gulab Jamun',
     prepTime: '🕜 20 min Prep time',
-    cookTime: '🕜 30 min Prep time',
+    cookTime: '🕜 30 min Cook time',
     stars: '⭐'.repeat(5),
   },
 ]
@@ -42,7 +42,7 @@ const PopularRecipes = forwardRef((props, ref) => {
           Popular Recipes
         </div>
         <div className='tagline'>
-        From over thousands of Indian Recipes, this one’s a crowd-pleaser
+        From over thousands of Indian Recipes, this one's a crowd-pleaser
         </div>
       </div>
 

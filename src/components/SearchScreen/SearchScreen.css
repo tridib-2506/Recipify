@@ -1,0 +1,167 @@
+.recipeDisplay {
+
+    background-color: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchAreaRecipe {
+    
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    height: 180px;
+    width: 53%;
+}
+
+.searchHeading {
+
+    position: relative;
+    top: 9%;
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    font-size: 24;
+    color: #361F1F;
+}
+  
+.searchField {
+
+    position: relative;
+    top: 16%;
+    display: flex;
+    padding-left: 20px;
+}
+
+.searchField i {
+
+    position: absolute;
+    z-index: 2;
+    padding-left: 13px;
+    padding-top: 14px;
+    color: #1A1A1A;
+}
+
+.searchField input {
+
+    outline: none;
+    flex-grow: 1;
+    padding: 12px;
+    background-color: #FFF7F7;
+    border: none;
+    height: 44px;
+    padding-left: 40px;
+}
+  
+.searchField button {
+    height: 45px;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    font-size: 24;
+    background-color: #FC7600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+  
+.tags {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 20px;
+    padding-top: 26px;
+}
+  
+.tags span {
+    background: transparent;
+    border: 0.9px solid #FC7600;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #361F1F;
+}
+
+.dishes {
+
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-left: 20px;
+    padding-top: 26px;
+}
+
+.dishes button {
+
+    height: 40px;
+    width: 150px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background: transparent;
+    border: 0.9px solid #FC7600;
+    padding: 5px 10px;
+    font-weight: 400;
+    color: #361F1F;
+}
+
+.recipeFor {
+
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #361F1F;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.recipeHead {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #FD9336;
+    color: #ffffff;
+    width: 85vw;
+    border: 0.5px solid #FD9336;
+}
+
+.recipeHead div {
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    text-align: center; 
+    width: 50%;
+}
+
+.recipeBody {
+
+    border: 0.5px solid #FD9336;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF7F7;
+    color: #000000;
+    width: 85vw;
+    height: 300px;
+    margin-bottom: 100px;
+}
+
+.recipeBody div {
+
+    border: 0.5px solid #FD9336;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-align: center; 
+    width: 100%;
+}
