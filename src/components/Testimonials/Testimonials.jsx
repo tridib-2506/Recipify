@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react'
 import './testimonials.css';
 import TestCard from './TestCard';
-import image1 from '../../assets/shrutii.jpg'
-import image2 from '../../assets/cat.png'
+import image1 from '../../assets/cat.png'
+import image2 from '../../assets/cat2.jpg'
+import image3 from '../../assets/cat3.png'
 
 const carrd = [
   {
@@ -14,14 +15,14 @@ const carrd = [
   {
     id: 2,
     profilep: image2,
-    profileName: 'Meow Nandi',
-    revieww: 'Recipify is my go-to for meal inspiration. The app makes it so easy to find new and exciting dishes to try. Highly recommend it to anyone who loves cooking!'
+    profileName: 'Anushka Bisht',
+    revieww: 'Fantastic app! Recipify helps me make the most of what I have in the kitchen. The recipe suggestions and easy navigation make meal planning so much easier.'
   },
   {
     id: 3,
-    profilep: image1,
+    profilep: image3,
     profileName: 'Aditya Chaplot',
-    revieww: 'Recipify is my go-to for meal inspiration. The app makes it so easy to find new and exciting dishes to try. Highly recommend it to anyone who loves cooking!'
+    revieww: 'I love how Recipify simplifies meal planning. Input your ingredients, get dish ideas, and view recipes all in one place. It\'s like having a personal chef!'
   },
 ]
 
