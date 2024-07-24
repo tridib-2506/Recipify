@@ -69,11 +69,11 @@ const SearchScreen = () => {
           </button>
         </div>
         <div className="tags">
-          <span onClick={() => handleIngredientClick('Tomato')}>Tomato</span>
-          <span onClick={() => handleIngredientClick('Mushroom')}>Mushroom</span>
-          <span onClick={() => handleIngredientClick('Potato')}>Potato</span>
-          <span onClick={() => handleIngredientClick('Carrot')}>Carrot</span>
-          <span onClick={() => handleIngredientClick('Yoghurt')}>Yoghurt</span>
+          <button onClick={() => handleIngredientClick('Tomato')}>Tomato</button>
+          <button onClick={() => handleIngredientClick('Mushroom')}>Mushroom</button>
+          <button onClick={() => handleIngredientClick('Potato')}>Potato</button>
+          <button onClick={() => handleIngredientClick('Carrot')}>Carrot</button>
+          <button onClick={() => handleIngredientClick('Yoghurt')}>Yoghurt</button>
         </div>
       </div>
       <div className="dishes">
