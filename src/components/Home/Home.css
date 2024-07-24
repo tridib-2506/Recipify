@@ -40,11 +40,20 @@
     font-size: 20;
     color: #361F1F;
 }
+
+.navButtons button:hover {
+    color: #808080;
+}
   
 .navButtons button:last-child {
     color: #FC7600;
     border: 1px solid #FC7600;
     padding: 5px 15px;
+}
+
+.navButtons button:last-child:hover {
+    background-color: #FC7600;
+    color: white;
 }
   
 .content {
@@ -159,6 +168,10 @@ img {
     cursor: pointer;
     margin-right: 20px;
 }
+
+.cook:hover {
+    background-color: #FFA07A;
+}
   
 .tags {
     font-family: 'Poppins', sans-serif;
@@ -179,4 +192,9 @@ img {
     font-weight: 400;
     font-size: 14px;
     color: #361F1F;
+}
+
+.tags button:hover {
+    background-color: #FC7600;
+    color: white;
 }
