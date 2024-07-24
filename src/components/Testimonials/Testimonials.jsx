@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import './testimonials.css';
 import TestCard from './TestCard';
 import image1 from '../../assets/cat.png'
-import image2 from '../../assets/cat2.jpg'
+import image2 from '../../assets/cat2.png'
 import image3 from '../../assets/cat3.png'
 
 const carrd = [
