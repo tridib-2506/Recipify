@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import './Home.css'
-import { Outlet, Link } from "react-router-dom";
 
 const Home = React.forwardRef(({ scrollToSection }, ref) => {
+  const [ingredients, setIngredients] = useState('');
+  const navigate = useNavigate();
+
+  const handleInputChange = (event) => {
+    setIngredients(event.target.value);
+  };
+
+  const handleIngredientClick = (ingredient) => {
+    setIngredients(ingredient);
+    navigate('/search', { state: { ingredients: ingredient } });
+  };
+
   return (
     <>
     <section ref={ref} id="home">
@@ -37,16 +49,16 @@ const Home = React.forwardRef(({ scrollToSection }, ref) => {
             Enter raw materials
           </div>
           <div className="searchField">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" />
-            <Link to="/search" className="cook">COOK</Link>
+            <i className="fa-solid fa-magnifying-glass"></i>
+            <input type="text" value={ingredients} onChange={handleInputChange} />
+            <Link to="/search" state={{ ingredients }} className="cook">COOK</Link>
           </div>
           <div className="tags">
-            <span>Tomato</span>
-            <span>Mushroom</span>
-            <span>Potato</span>
-            <span>Carrot</span>
-            <span>Yoghurt</span>
+            <button onClick={() => handleIngredientClick('Tomato')}>Tomato</button>
+            <button onClick={() => handleIngredientClick('Mushroom')}>Mushroom</button>
+            <button onClick={() => handleIngredientClick('Potato')}>Potato</button>
+            <button onClick={() => handleIngredientClick('Carrot')}>Carrot</button>
+            <button onClick={() => handleIngredientClick('Yoghurt')}>Yoghurt</button>
           </div>
         </div>
       </div>
