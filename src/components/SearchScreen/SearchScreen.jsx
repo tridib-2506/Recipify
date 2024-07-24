@@ -65,7 +65,7 @@ const SearchScreen = () => {
           <i className="fa-solid fa-magnifying-glass"></i>
           <input type="text" value={ingredients} onChange={handleInputChange} />
           <button onClick={() => handleCook()}>
-            {loading ? 'Cooking...' : 'Cook'}
+            {loading ? 'COOKING...' : 'COOK'}
           </button>
         </div>
         <div className="tags">

@@ -21,8 +21,11 @@ def scrape_recipe(dish):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--window-size=1920x1080")
     try:
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(options=chrome_options)
         # driver = webdriver.Chrome(options=chrome_options)
     except Exception as e:
         return {"error": f"Failed to initialize WebDriver: {str(e)}"}
