@@ -12,7 +12,8 @@ import requests
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-API_KEY = ""  # Replace with your actual API key
+import os
+API_KEY = os.getenv("GEMINI_API_KEY")
 
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
