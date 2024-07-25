@@ -24,4 +24,3 @@ export async function getDishSuggestions(ingredients) {
   console.log(text);
   return text.split(',').map(dish => dish.trim());
 }
-}
