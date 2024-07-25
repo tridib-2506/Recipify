@@ -1,8 +1,8 @@
 from flask import Flask, jsonify
 from seleniumbase import get_driver
-from selenium.get_driver.chrome.service import Service as ChromeService
-from selenium.get_driver.common.by import By
-from selenium.get_driver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 import os
 
 app = Flask(__name__)
