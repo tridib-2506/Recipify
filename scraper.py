@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from selenium import webdriver
+from seleniumwire import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Selenium is working"
+    return "Selenium-Wire is working"
 
 @app.route('/scrape')
 def scrape():
