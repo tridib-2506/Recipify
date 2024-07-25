@@ -16,7 +16,7 @@ import os
 API_KEY = os.getenv("GEMINI_API_KEY")
 
 app = Flask(__name__)
-CORS(app)  # This enables CORS for all routes
+CORS(app, resources={r"/*": {"origins": "https://your-netlify-app-url.netlify.app"}})
 
 
 def split_recipe(recipe_text):
