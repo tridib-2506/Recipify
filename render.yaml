@@ -1,8 +1,13 @@
 services:
   - type: web
-    name: recipe-scraper-api
+    name: scraper-backend
     env: docker
+    plan: free
+    buildCommand: ""
+    startCommand: ""
     dockerfilePath: ./Dockerfile
     envVars:
       - key: GEMINI_API_KEY
-        sync: false
+        value: AIzaSyAqYGolgMF1Swy6C710QdIQob9HCxU-JcI
+    healthCheckPath: /
+    autoDeploy: true
