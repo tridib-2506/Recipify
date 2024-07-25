@@ -3,3 +3,4 @@ selenium
 flask-cors
 requests
 google-generativeai
+gunicorn
