@@ -15,7 +15,7 @@ const carrd = [
   {
     id: 2,
     profilep: image2,
-    profileName: 'Anushka Bisht',
+    profileName: 'Shivani Parasar',
     revieww: 'Fantastic app! Recipify helps me make the most of what I have in the kitchen. The recipe suggestions and easy navigation make meal planning so much easier.'
   },
   {

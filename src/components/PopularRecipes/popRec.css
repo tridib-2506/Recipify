@@ -48,6 +48,7 @@
     align-items: center;
     border: 1px solid #D9CABC;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .dishname{

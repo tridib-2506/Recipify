@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import './SearchScreen.css'
 import { getDishSuggestions } from '../../geminiService'
 import { fetchRecipe } from '../../apiService'
@@ -10,6 +10,7 @@ const SearchScreen = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.state?.ingredients) {
@@ -55,8 +56,13 @@ const SearchScreen = () => {
     }
   };
 
+  const handleBackClick = () => {
+    navigate('/'); // Navigate to the home page
+  };
+
   return (
     <div className="recipeDisplay">
+      <button className="backButton" onClick={handleBackClick}><i class="fas fa-home fa-lg" ></i></button>
       <div className="searchAreaRecipe">
         <div className="searchHeading">
           Enter raw materials
@@ -90,7 +96,7 @@ const SearchScreen = () => {
           </div>
           <div className="recipeBody">
             <div className="ingredDisplay">{selectedRecipe.ingredients}</div>
-            <div className="instDisplay">{selectedRecipe.instructions}</div>
+            <div className="instDisplay ingredDisplay">{selectedRecipe.instructions}</div>
           </div>
         </>
       )}
