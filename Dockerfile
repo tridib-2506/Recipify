@@ -18,7 +18,6 @@ RUN apt-get update && \
     xdg-utils \
     libdbus-glib-1-2 \
     xvfb \
-    # Clean up
     && rm -rf /var/lib/apt/lists/*
 
 # Install Chrome
