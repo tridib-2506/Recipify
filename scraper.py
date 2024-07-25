@@ -17,6 +17,33 @@ API_KEY = ""  # Replace with your actual API key
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
+
+def split_recipe(recipe_text):
+    # Split the text at 'INSTRUCTIONS'
+    parts = recipe_text.split('INSTRUCTIONS', 1)
+    
+    if len(parts) != 2:
+        parts = recipe_text.split('Instructions', 1)
+    
+    if len(parts) != 2:
+        return None, None  # If 'INSTRUCTIONS' is not found
+    
+    ingredients = parts[0].strip()
+    instructions = 'INSTRUCTIONS' + parts[1].strip()
+    
+    # Clean up the ingredients
+    ingredients = ingredients.replace('INGREDIENTS', '\n', 1)
+    ingredients = ingredients.replace('**Ingredients:**', '\n', 1)
+    ingredients = ingredients.replace('•', '\n•').strip()
+    
+    # Clean up the instructions
+    instructions = instructions.replace('INSTRUCTIONS', '\n', 1)
+    instructions = instructions.replace(':**', '\n', 1)
+    instructions = instructions.replace('•', '\n•').strip()
+    
+    return ingredients, instructions
+
+
 def scrape_recipe(dish):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -67,12 +94,17 @@ def scrape_recipe(dish):
                 
                 if start_index != -1 and end_index != -1:
                     ingredients_text = visible_text[start_index:end_index].strip()
-                    ingredients_text = re.sub(r'▢\s*\n*', '• ', ingredients_text)
-                    ingredients_text = ingredients_text.replace("INGREDIENTS (US CUP = 240ML )", "INGREDIENTS\n(US CUP = 240ML)\n", 1)
+                    ingredients_text = re.sub(r'▢\s*\n*', ' • ', ingredients_text)
+                    ingredients_text = ingredients_text.replace("INGREDIENTS ", "\n", 1)
                     ingredients_text = re.sub(r'(INSTRUCTIONS)', r'\1\n', ingredients_text)
+                    
+                    ingredients, instructions = split_recipe(ingredients_text)
+                    # print(instructions)
+                    
                     return {
                         "recipe_link": recipe_link,
-                        "ingredients": ingredients_text
+                        "ingredients": ingredients,
+                        "instructions": instructions,
                     }
                 else:
                     return {"error": "Couldn't find 'INGREDIENTS' or the end marker in the visible text."}
@@ -95,7 +127,7 @@ def fetch_dishes(dish):
         "contents": [
             {
                 "parts": [
-                    {"text": f"Give me recipe of {dish}?"}
+                    {"text": f"Give me recipe of Indian dish: {dish} with just Ingredients and Instructions?"}
                 ]
             }
         ]
@@ -107,12 +139,16 @@ def fetch_dishes(dish):
         
         response_data = response.json()
         recipe = response_data['candidates'][0]['content']['parts'][0]['text']
-        # with open(file_path, 'w') as file:
-        #     file.write(recipe)
+        file_path = "temp_recipe.txt"
+        with open(file_path, 'w') as file:
+            file.write(recipe)
+        # rec = re.sub(r'\*+', '*', recipe).replace('*', '\n•')
+        # rec = recipe.replace('*', '\n•')
+        ingredients, instructions = split_recipe(recipe)
         
         return {
-            "recipe_link": "recipe_link",
-            "ingredients": recipe
+            "ingredients": ingredients,
+            "instructions": instructions,
         }        
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
