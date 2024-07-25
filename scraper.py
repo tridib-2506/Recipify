@@ -1,8 +1,8 @@
 from flask import Flask, jsonify
-from seleniumwire import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
+from seleniumbase import get_driver
+from selenium.get_driver.chrome.service import Service as ChromeService
+from selenium.get_driver.common.by import By
+from selenium.get_driver.chrome.options import Options
 import os
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def scrape():
     chrome_options.add_argument("--disable-dev-shm-usage")
 
     service = ChromeService(executable_path="/usr/local/bin/chromedriver")
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver = get_driver.Chrome(service=service, options=chrome_options)
 
     try:
         driver.get("https://www.google.com")
